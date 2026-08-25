@@ -1,0 +1,10 @@
+# Invoicing runs beside the settlement service it bills from.
+services:
+  invoicing:
+    build: .
+    environment:
+      FEE_RATE: "0.029"
+  settlement:
+    build: ./celmis-e2e-probe
+    environment:
+      FEE_RATE: "0.029"
